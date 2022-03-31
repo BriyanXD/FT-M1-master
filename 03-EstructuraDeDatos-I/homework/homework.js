@@ -31,14 +31,13 @@ function nFibonacci(n) {
 
 function Queue() {
   this.queue = [];
+}
 
-  this.enqueue = function(value){
-    this.queue.unshift(value);
-  }
-  this.dequeue = function(){
-    if(this.queue.length == 0)return undefined;
-    return this.queue.pop();
-  }
+Queue.prototype.enqueue = function(value){
+  this.queue.unshift(value);
+}
+Queue.prototype.dequeue = function(){
+  return this.queue.pop();
 }
 Queue.prototype.size = function(){
   if(this.queue.length == 0)return 0;
