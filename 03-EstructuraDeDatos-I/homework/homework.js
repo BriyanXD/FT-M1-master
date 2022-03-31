@@ -33,13 +33,15 @@ function Queue() {
   this.queue = [];
 
   this.enqueue = function(value){
-    this.queue.push(value);
+    this.queue.unshift(value);
   }
   this.dequeue = function(){
-    return this.queue.shift();
+    if(this.queue.length == 0) return undefined;
+    return this.queue.pop();
   }
   this.size =  function(){
-    return this.queue.length();
+    if(this.queue.length == 0)return 0;
+    return this.queue.length;
   }
 }
 
