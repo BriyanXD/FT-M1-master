@@ -7,8 +7,8 @@ function nFactorial(n) {
   // devolvé el factorial de n (n!)
   // ej:
   // el factorial de 3 es 6 (3 * 2 * 1)
-  if(n === 1){
-    return n
+  if(n < 1){
+    return 1
   }
   return n * nFactorial(n - 1);
 }
