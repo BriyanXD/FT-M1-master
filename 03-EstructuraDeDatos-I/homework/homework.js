@@ -36,14 +36,16 @@ function Queue() {
     this.queue.unshift(value);
   }
   this.dequeue = function(){
-    if(this.queue.length == 0) return undefined;
+    if(this.queue.length == 0)return undefined;
     return this.queue.pop();
   }
-  this.size =  function(){
-    if(this.queue.length == 0)return 0;
-    return this.queue.length;
-  }
 }
+Queue.prototype.size = function(){
+  if(this.queue.length == 0)return 0;
+  return this.queue.length;
+}
+let lista = new Queue();
+lista.enqueue(2)
 
 // No modifiquen nada debajo de esta linea
 // --------------------------------
