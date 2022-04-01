@@ -7,9 +7,8 @@ function nFactorial(n) {
   // devolvé el factorial de n (n!)
   // ej:
   // el factorial de 3 es 6 (3 * 2 * 1)
-  if(n < 1){
-    return 1
-  }
+  if(n < 1) return 1
+  if(n < 0) return "Error."
   return n * nFactorial(n - 1);
 }
 
@@ -20,6 +19,7 @@ function nFibonacci(n) {
   // nFibonacci(1) // 1 // el elemento 1 es 1
   // nFibonacci(6) // 1 // el elemento 6 es 8
   if(n < 2) return n
+  if(n < 0) return "Error."
   return nFibonacci(n-2) + nFibonacci(n-1);
 }
 
@@ -40,7 +40,6 @@ Queue.prototype.dequeue = function(){
   return this.queue.pop();
 }
 Queue.prototype.size = function(){
-  if(this.queue.length == 0)return 0;
   return this.queue.length;
 }
 let lista = new Queue();
