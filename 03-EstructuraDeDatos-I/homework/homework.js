@@ -42,8 +42,6 @@ Queue.prototype.dequeue = function(){
 Queue.prototype.size = function(){
   return this.queue.length;
 }
-let lista = new Queue();
-lista.enqueue(2)
 
 // No modifiquen nada debajo de esta linea
 // --------------------------------
