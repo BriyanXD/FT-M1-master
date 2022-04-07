@@ -1,36 +1,22 @@
 'use strict'
 // No cambies los nombres de las funciones.
 
-function factorear(num, arr = []){
+function factorear(num){
   // Factorear el número recibido como parámetro y devolver en un array
   // los factores por los cuales se va dividiendo a dicho número (De menor a mayor)
   // Ej: factorear(180) --> [1, 2, 2, 3, 3, 5] Ya que 1x2x2x3x3x5 = 180 y son todos números primos
   // Tu código:
-  if(num === 1){
-      arr.unshift(1);
-      console.log(arr);
-      return arr;
+  let div = 2;
+  let arr = [1];
+  while(num > 1){
+  if(num % div === 0){
+    arr.push(div);
+    num = num / div;
+  }else{
+    div++;
   }
-  if(num % 2 === 0){
-    arr.push(2);
-    return factorear(num / 2, arr);
-  }
-  if(num % 3 === 0){
-    arr.push(3);
-    return factorear(num / 3, arr);
-  }
-  if(num % 5 === 0){
-    arr.push(5);
-    return factorear(num / 5, arr);
-  }
-  if(num % 7 === 0){
-    arr.push(7);
-    return factorear(num / 7, arr);
-  }
-  if(num % 11 === 0){
-    arr.push(11);
-    return factorear(num / 11, arr);
-  }
+}
+return arr;
 }
 
 function bubbleSort(array) {
@@ -39,12 +25,15 @@ function bubbleSort(array) {
   // Devolver el array ordenado resultante
   // Tu código:
   var aux = null;
-  for(var i = 0; i < array.length; i++){
+  var flag = true;
+  while(flag){
+    flag = false;
     for(var j = 0; j < array.length; j++){
       if(array[j] > array[j+1]){
         aux = array[j+1];
         array[j+1] = array[j];
         array[j] = aux;
+        flag = true;
       }
     }
   }
